@@ -31,11 +31,13 @@ void sendsignal(char* sigvalue){
         fprintf(stderr, "Name error (%s)\n", err.message);
         dbus_error_free(&err);
     }
-    if (DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER != ret){
-        exit(1);
-    }
+    //if (DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER != ret){
+     //   printf("not primary owner!!\n");
+      //  exit(1);
+        
+    //}
     
-    msg = dbus_message_new_signal("/test/signal/Object", "test.signal.Type", "Test");
+    msg = dbus_message_new_signal("/test/signal/Object", "test.signal.Type", "device");
     if (NULL == msg){
         fprintf(stderr, "message null\n");
         exit(1);

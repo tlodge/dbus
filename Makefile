@@ -6,7 +6,7 @@ CFLAGS+=-I/usr/lib/glib-2.0/include/
 CFLAGS+=-I/usr/lib/dbus-1.0/include/
 CC=g++
 
-CLIENTS = dbus sigsend usbmonitor
+CLIENTS = dbus sigsend usbsignaller
 
 all: $(CLIENTS)
 
@@ -16,8 +16,8 @@ dbus: dbus.o
 sigsend: sigsend.o
 	$(CC) $(CFLAGS) $(LDFLAGS) sigsend.o -o sigsend
 
-usbmonitor: usbmonitor.o 
-	$(CC) $(CFLAGS) $(LDFLAGS) usbmonitor.o  hashtable.c -o usbmonitor 
+usbsignaller: usbsignaller.o 
+	$(CC) $(CFLAGS) $(LDFLAGS) usbsignaller.o  hashtable.c -o usbsignaller 
 
 clean:
-	rm -rf *.o dbus usbmonitor sigsend
+	rm -rf *.o dbus usbsignaller sigsend

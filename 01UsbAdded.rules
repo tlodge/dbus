@@ -1,0 +1,4 @@
+KERNEL=="sd*", BUS=="usb", ACTION=="add",    RUN+="/usr/sbin/sigsend add %r/%k"
+KERNEL=="sd*", BUS=="usb", ACTION=="remove",    RUN+="/usr/sbin/sigsend remove %r/%k"
+KERNEL=="ttyUSB*",  ACTION=="add", RUN+="/usr/bin/currentcost-monitor %r/%k"
+KERNEL=="ttyUSB*",  ACTION=="remove", RUN+="/usr/bin/currentcost-stop"
